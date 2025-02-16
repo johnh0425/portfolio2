@@ -1,0 +1,848 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/* Universal Assign */
+* {
+    /* background-color: #212121; */
+    box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(270deg, #303030, #7b7979, #3e3e3e, #201f1f);
+  background-size: 400% 400%;
+  animation: gradientScroll 100s ease infinite;
+}
+
+@keyframes gradientScroll {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  .name {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: monospace;
+    border-right: 2px solid white; /* Simulates a cursor */
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(20, end) forwards, blink 0.7s infinite, hideCursor 20s forwards;
+  }
+
+  @keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 110px; /* Adjust based on text length */
+    }
+  }
+
+  @keyframes typing2 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 135px; /* Adjust based on text length */
+    }
+  }
+
+  @keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+  }
+
+  @keyframes hideCursor {
+    100% {
+        border-right: none; /* Hides the cursor */
+    }
+  }
+
+  
+  .major {
+    font-size: 14px;
+    color: #ccc;
+    font-family: monospace;
+    border-right: 2px solid white; /* Simulates a cursor */
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing2 3s steps(20, end) forwards, blink 0.7s infinite, hideCursor 20s forwards;
+  }
+  
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .resume a,
+  .dropbtn {
+    text-decoration: none;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+    background-color: inherit;
+  }
+  
+  .resume a:hover,
+  .dropbtn:hover {
+    color: #00bcd4;
+  }
+
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+
+    transition: background 0.3s;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #00bcd4;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
+  /* Menu Slider */
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 300px;
+    height: 50px;
+    background: #ddd;
+    border-radius: 25px;
+    margin: auto;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+
+  .select {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #585858;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .proj, .a-me {
+    flex: 1;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+    color: black;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .proj.active, .a-me.active {
+    color: white;
+  }
+  
+  /* Hide sections initially 
+  #projects, #aboutme {
+    display: none;
+  } 
+  */
+
+  /* Default selected section 
+  #projects {
+    display: block;
+  }
+  */
+
+
+  /* Opening Block */
+  .opener {
+    max-width: 1200px;
+    height: 80dvh;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: rgba(26, 26, 26, 0.906);
+    border-radius: 10px;
+    overflow: auto;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 2s ease-out forwards, gradientBG 15s infinite alternate;
+    background: linear-gradient(45deg, #8b8b8b, #323232, #323232, #323232, #696969);
+    background-size: 400% 400%;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .summary {
+    max-width: 800px;
+    font-size: 3em;
+    font-weight: 600;
+    margin: 80px 0px 120px 20px;
+    line-height: 1.4;
+    color: white;
+    animation: light 10s infinite alternate ease-in-out;
+  }
+
+  @keyframes light {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(0, 0%, 50%, 0.2),
+        0 0 0.125em hsla(300, 1%, 54%, 0.3),
+        -1em -0.125em 0.5em hsla(0, 0%, 60%, 0.532),
+        1em 0.125em 0.5em hsla(0, 0%, 59%, 0.63);
+    }
+    
+    30% { 
+      color: hsl(0, 0%, 57%);
+      text-shadow:
+        0 0 1em hsla(0, 0%, 4%, 0.5),
+        0 0 0.125em hsla(0, 0%, 10%, 0.5),
+        -0.5em -0.125em 0.25em hsla(0, 0%, 31%, 0.2),
+        0.5em 0.125em 0.25em hsla(0, 0%, 24%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(0, 0%, 20%, 0.5),
+        0 0 0.125em hsla(0, 0%, 54%, 0.5),
+        -0.25em -0.125em 0.125em hsla(0, 1%, 35%, 0.2),
+        0.25em 0.125em 0.125em hsla(180, 1%, 39%, 0.4);
+    }
+    
+    70% {
+      color: hsl(0, 0%, 95%);
+      text-shadow:
+        0 0 1em hsla(0, 0%, 66%, 0.5),
+        0 0 0.125em hsla(0, 0%, 58%, 0.5),
+        0.5em -0.125em 0.25em hsla(60, 0%, 57%, 0.2),
+        -0.5em 0.125em 0.25em hsla(0, 0%, 49%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(105, 5%, 83%, 0.849),
+        0 0 0.125em hsla(150, 2%, 48%, 0.801),
+        1em -0.125em 0.5em hsla(140, 10%, 82%, 0.416),
+        -1em 0.125em 0.5em hsla(120, 4%, 80%, 0.614);
+    }
+    
+  }
+  
+  
+  
+  
+
+  
+  .year-major,
+  .college {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 3px;
+    color: #ddd;
+    text-align: right;
+  }
+
+  @media (max-width: 768px) {
+    .opener {
+      width: 95vw;
+      min-height: 60vh;
+      padding: 4vw;
+    }
+  
+    .summary {
+      font-size: 2.5em;
+      margin: 4vw 0 30vw 2vw;
+    }
+  
+    .year-major,
+    .college {
+      text-align: right;
+      font-size: 18px;
+    }
+  }
+
+
+
+  /* Projects Section */
+  .projects {
+    max-width: 1200px;
+    margin: 50px auto;
+    border-radius: 10px;
+    opacity: 70%;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .proj-title {
+    animation: light 10s infinite alternate ease-in-out;
+  }
+
+  .software h2, .hardware h2 {
+    font-size: 20px;
+    margin: 20px 0px 40px 30px;
+    animation: light 10s infinite alternate ease-in-out;
+  }
+
+  .soft-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 15px;
+  }
+
+  .hard-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Responsive grid */
+    gap: 15px;
+  }
+
+  /* Masonry Layout Software/Hardware Projects */
+  .software, .hardware {
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px;
+    background: rgba(26, 26, 26, 0.906);
+    border-radius: 40px;
+  }
+
+  .masonry-item, .masonryh {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.906);
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* Maintain aspect ratio for consistency */
+  .masonry-item img,  .masonryh img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    aspect-ratio: 16/9; /* Ensures uniform sizing */
+  }
+
+  /* Hover Effect */
+  .masonry-item:hover, .masonryh:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .soft-group, .hard-group {
+      grid-template-columns: 1fr; /* Stack blocks vertically */
+    }
+  }
+
+
+
+
+  /* About Me Section */
+  .aboutme {
+    max-width: 1200px;
+    margin: 30px auto;
+    border-radius: 10px;
+    opacity: 80%;
+  }
+
+  .aboutme-title {
+    animation: light 10s infinite alternate ease-in-out;
+  }
+
+  .bio {
+    align-items: start;
+    width: 100%;
+    padding: 40px;
+    background: rgba(26, 26, 26, 0.906);
+    border-radius: 10px;
+  }
+
+  .mainbio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 80px;
+    width: 100%;
+  }
+
+  .mainbio .root-d,
+  .mainbio .decision-d,
+  .mainbio .practice-d,
+  .mainbio .free-d {
+    display: flex;
+    flex-direction: column;  /* Stack content vertically within details */
+  }
+
+  .mainbio .root-img,
+  .mainbio .decision-img,
+  .mainbio .practice-img,
+  .mainbio .free-img {
+    width: 100%;  /* Ensure images take up the full width of the container */
+    height: auto;  /* Maintain image aspect ratio */
+    border-radius: 8px;  /* Optional: add rounded corners */
+    object-fit: cover;  /* Optional: ensures the image maintains its aspect ratio */
+  }
+
+  /* Alternating grid layout for rows (details first, then image) */
+  .root-d, .root-img {
+    grid-row: 1;
+  }
+
+  .decision-img, .decision-d {
+    grid-row: 2;
+  }
+
+  .practice-d, .practice-img {
+    grid-row: 3;
+  }
+
+  .free-d, .free-img {
+    grid-row: 4;
+  }
+
+  .mainbio .root-d, .decision-img, .practice-d, .free-img {
+    grid-column: 1;
+  }
+
+  .mainbio .root-img, .decision-d, .practice-img, .free-d {
+    grid-column: 2; 
+  }
+
+  @media (max-width: 768px) {
+    .mainbio {
+      display: flex;
+      flex-direction: column; /* Stack content vertically */
+    }
+
+    .mainbio .root-d,
+    .mainbio .decision-d,
+    .mainbio .practice-d,
+    .mainbio .free-d,
+    .mainbio .root-img,
+    .mainbio .decision-img,
+    .mainbio .practice-img,
+    .mainbio .free-img {
+      grid-column: auto; /* Remove the column-based grid */
+      grid-row: auto; /* Remove row-based structure */
+      width: 100%; /* Full width */
+    }
+  }
+
+  /* Style for the summary (clickable text) */
+  summary {
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  summary:hover {
+    background-color: #bbb;
+  }
+
+  /* Style for the text inside the details */
+  p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  /* Optional: Style for the bio header */
+  .hook h2 {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  
+
+
+
+  /* Education */
+  .education {
+    max-width: 1200px;
+    margin: 50px auto;
+    border-radius: 10px;
+    opacity: 90%;
+  }
+
+  .educ-header {
+    animation: light 10s infinite alternate ease-in-out;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: rgba(26, 26, 26, 0.906);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  /* Create a vertical line for the timeline */
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: #ddd;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  /* Timeline container (left & right) */
+  .container {
+    position: relative;
+    width: 50%;
+    padding: 10px 40px;
+    display: flex;
+  }
+
+  /* Position left timeline entries */
+  .container.left {
+    left: 0%;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    flex-basis: auto;
+  }
+
+  /* Position right timeline entries */
+  .container.right {
+    left: 50%;
+    display: flex;
+    text-align: left;
+    flex-basis: auto;
+  }
+  
+
+  /* Timeline content box */
+  .content {
+    padding: 20px;
+    background: rgba(26, 26, 26, 0.906);
+    color: white;
+    position: relative;
+    border-radius: 10px;
+  }
+
+  /* Timeline circles */
+  .container::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border: 3px solid #007bff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  /* Position left circles */
+  .container.left::before {
+    right: -11px;
+  }
+
+  /* Position right circles */
+  .container.right::before {
+    left: -11px;
+  }
+
+  /* Styling for school names */
+  .ucsd, .ucr {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f8f9fa;
+  }
+
+  /* Timeline details */
+  .tl p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #bbb;
+  }
+
+  /* Expandable course list */
+  .hover-ucsd, .hover-ucr {
+    display: none;
+    background: rgba(26, 26, 26, 0.95);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    color: white;
+  }
+
+  /* Show the course list on hover */
+  .ucsd-plus:hover ~ .hover-ucsd,
+  .ucr-plus:hover ~ .hover-ucr {
+    display: block;
+  }
+
+  /* Plus button styling */
+  .ucsd-plus, .ucr-plus {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  /* Responsive: Single column on smaller screens */
+  @media (max-width: 768px) {
+    .timeline::after {
+      left: 20px;
+    }
+
+    .container {
+      width: 100%;
+      left: 0;
+      text-align: left;
+      padding-left: 50px;
+      padding-right: 10px;
+    }
+
+    .container::before {
+      left: -8px;
+    }
+
+    .container.right::before {
+      left: -8px;
+    }
+
+    .container.left {
+      left: 0%;
+      text-align: left;
+      justify-content: flex-start;
+    }
+
+    .container.right {
+      left: 0%;
+    }
+  }
+
+
+
+  /* Skills Section */
+  .skills-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 20px;
+    background: rgba(26, 26, 26, 0.906);
+    border-radius: 10px;
+    opacity: 90%;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: light 10s infinite alternate ease-in-out;
+  }
+
+  /* Container for skills in two columns */
+  .skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    justify-items: center;
+    padding: 10px;
+  }
+
+  /* Individual Skill Column */
+  .skills-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+  }
+
+  /* Individual Skill */
+  .skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  /* Skill Name */
+  .skill-name {
+    width: 150px;
+    font-weight: bold;
+    text-align: left;
+    color: white
+  }
+
+  /* Experience Duration */
+  .skill-exp {
+    width: 60px;
+    text-align: right;
+    font-size: 14px;
+    color: #bbb;
+  }
+
+  /* Progress Bar */
+  .skill-bar {
+    flex-grow: 1;
+    height: 10px;
+    background: #444;
+    border-radius: 5px;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+
+  /* Filled Portion */
+  .skill-fill {
+    height: 100%;
+    background: #007bff;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    .skills-container {
+      display: flex;
+      flex-direction: column; /* Stack content vertically */
+    }
+  }
+
+
+  dialog {
+    display: none;
+  }
+
+  .foot {
+    background-color: #1a1a1a;
+    color: #333;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .contact-footer {
+    font-size: 1.8em;
+    animation: light 10s infinite alternate ease-in-out;
+  }
+
+  .socials ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .socials ul li {
+    display: inline;
+  }
+
+  .socials ul li a {
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out;
+    color: white;
+  }
+
+  .socials ul li a:hover {
+    color: #197096; /* A stylish pink shade for hover effect */
+  }
+
+  .copyright {
+    margin-top: 20px;
+    font-size: 0.9em;
+    opacity: 0.8;
+    color: white;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .socials ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+  }
+
+  
+
+  
+  
+  
+  
+

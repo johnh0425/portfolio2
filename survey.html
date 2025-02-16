@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Feedback Survey</title>
+</head>
+<body>
+    <h2>Website Feedback Survey</h2>
+    <button onclick="history.back()">Go Back</button>
+    <form>
+        <fieldset>
+            <legend>Visitor Context</legend>
+            <label for="visit-source">How did you find my portfolio?</label>
+            <input type="visit-source" id="visit-source" name="visit-source" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Your Experience</legend>
+            <label for="site-accessible">How accessible did you find my portfolio?</label>
+            <select id="site-accessible" name="site-accessible">
+                <option value="very-accessible">Very Accessible</option>
+                <option value="somewhat-accessible">Somewhat Accessible</option>
+                <option value="not-accessible">Not Accessible</option>
+            </select>
+
+            <label for="design-rating">How would you rate the design?</label>
+            <select id="design-rating" name="design-rating">
+                <optgroup label="Positive">
+                    <option value="excellent">Excellent</option>
+                    <option value="good">Good</option>
+                </optgroup>
+                <optgroup label="Needs Improvement">
+                    <option value="average">Average</option>
+                    <option value="poor">Poor</option>
+                </optgroup>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Feedback</legend>
+            <label for="suggestions">What improvements would you suggest?</label>
+            <textarea id="suggestions" name="suggestions"></textarea>
+        </fieldset>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+</body>
+</html>

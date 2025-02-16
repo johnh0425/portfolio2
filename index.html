@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio of John Hsu</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      custom-quote-card {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-family: 'Georgia', serif;
+    }
+
+    custom-quote-card blockquote {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 0;
+      padding: 0;
+      color: #555;
+    }
+
+    custom-quote-card footer {
+      margin-top: 10px;
+      text-align: right;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    custom-quote-card footer span {
+      font-weight: bold;
+    }
+
+    custom-quote-card footer small {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <div class="name">John Hsu</div>
+        <div class="major">Computer Engineer</div>
+      </div>
+      <div class="right">
+        <div class="dropdown">
+          <button class="dropbtn">Contact</button>
+          <div class="dropdown-content">
+            <a href="https://www.linkedin.com/in/john-hsu-56b121243/">LinkedIn</a>
+            <a href="https://github.com/johnh0425">GitHub</a>
+            <a href="#">Email</a>
+            <a href="./experiment.html">Experiment Page For leftover html tags</a>
+          </div>
+        </div>
+        <div class="resume">
+          <a href="#">Resume</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+        <div class="opener">
+          <h1 class="summary">Engineer. Developer. Designer. Crafting seamless software and hardware solutions.</h1>
+          <div class="status">
+            <h3 class="year-major">4th Year Undergraduate Student </h3>
+            <h3 class="college"><i>University of California, San Diego</i></h3>
+          </div>
+        </div>
+        <div class="arrow"></div>
+
+        <hr>
+
+        <div class="tab">
+          <div class="left-a"></div>
+          <div class="select">
+            <div class="slider"></div>
+            <div class="proj">Projects</div>
+            <div class="a-me">About Me</div>
+          </div>
+          <div class="right-a"></div>
+        </div>
+
+        <section id="projects" class="projects">
+          <h2 class="proj-title">Projects</h2>
+          <div class="software">
+            <h2><strong>Software Projects</strong></h2>
+            <div class="soft-group">
+              <div class="masonry-item">
+                <a href="./projects/project1.html">
+                  <img src="./images/chip.jpg" alt="Computer Chip">
+                  <h3 class="stitle1">Chip Design</h3>
+                </a> 
+              </div>
+              <div class="masonry-item">
+                <a href="./projects/project2.html">
+                  <img src="./images/chess.jpg" alt="Chess Board">
+                  <h3 class="stitle2">Terminal Based Chess Game</h3>
+                </a> 
+              </div>
+              <div class="masonry-item">
+                <a href="">
+                  <img src="./images/music.jpg" alt="Music Note">
+                  <h3 class="stitle3" >ML Music Prediction Model</h3>
+                </a>
+              </div>
+              <div class="masonry-item">
+                <a href="">
+                  <img src="./images/OS.jpeg" alt="OS Companies">
+                  <h3 class="stitle4">OS Nachos</h3>
+                </a>
+              </div>
+              <div class="masonry-item">
+                <a href="">
+                  <img src="./images/snake.jpg" alt="Snake Game">
+                  <h3 class="stitle5">Snake Game</h3>
+                </a>
+              </div>
+              <div class="masonry-item">
+                <a href="">
+                  <img src="./images/pong.jpg" alt="Pong Game">
+                  <h3 class="stitle6">Pong Game</h3>
+                </a>
+              </div>
+              <div class="masonry-item">
+                <a href="">
+                  <img src="./images/bitcoin.jpg" alt="Bitcoin">
+                  <h3 class="stitle7">Bitcoin Hashing</h3>
+                </a>
+              </div>
+              <div class="masonry-item">
+                <a href="">
+                  <img src="./images/handwriting.jpg" alt="Handwritten Number">
+                  <h3 class="stitle8">ML Handwriting Recognition Model</h3>
+                </a>
+              </div>
+              <div class="masonry-item">
+                <a href="">
+                  <img src="./images/pressure.jpg" alt="Pressure Data for Fall Detecton">
+                  <h3 class="stitle9">ML Fall Detection Model (Software)</h3>
+                </a>
+              </div>
+              <div class="masonry-item">
+                <a href="">
+                  <img src="./images/3dsmax.jpg" alt="3Ds Max">
+                  <h3 class="stitle10">3D Design Projects</h3>  
+                </a>
+              </div>
+              <div class="masonry-item">
+                <a href="">
+                  <img src="./images/selfcar.jpg" alt="Self Driving Car">
+                  <h3 class="stitle11">ML Obstacle Detection Model</h3>
+                </a>
+              </div>
+              <div class="masonry-item">
+                <a href="">
+                  <img src="./images/wip.jpg" alt="Website Homepage">
+                  <h3 class="stitle12">Personal Website Portfolio</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="hardware">
+            <h2><strong>Hardware Projects</strong></h2>
+            <div class="hard-group">
+              <div class="masonryh">
+                <a href="">
+                  <img src="./images/soles.jpeg" alt="Fall Detection Insoles">
+                  <h3 class="htitle1">Fall Detection Insoles</h3>
+                </a>
+              </div>
+              <div class="masonryh">
+                <a href="">
+                  <img src="./images/sensorkit.jpg" alt="37in1 SensorKit">
+                  <h3 class="htitle2">Individual Sensor Project</h3>
+                </a>
+              </div>
+              <div class="masonryh">
+                <a href="">
+                  <img src="./images/butterworth.jpg" alt="Butterworth Filter">
+                  <h3 class="htitle2">Signal Filter Circuit Build</h3>
+                </a>
+              </div>
+              <div class="masonryh">
+                <a href="">
+                  <img src="./images/wip.jpg" alt="">
+                  <h3 class="htitle2">Future Embedded Project</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr>
+        
+        <section id="aboutme" class="aboutme">
+          <custom-quote-card>
+            <blockquote>
+              "The people who are crazy enough to think they can change the world are the ones who do."
+            </blockquote>
+            <footer>
+              <span><cite> - Steve Jobs</cite></span>
+            </footer>
+          </custom-quote-card>
+          <h2 class="aboutme-title"><strong>About Me</strong></h2>
+          <div class="bio">
+            <div class="hook"><h2>This is the story of how my journey led me to a deep passion for the world of technology.</h2></div>
+            <div class="mainbio">
+              <img src="./images/wip.jpg" alt="Root of Passion Image" class="root-img">
+              <details class="root-d">
+                <summary class="root-s">The Root of my Passion.</summary>
+                <p class="root-p">As a child, I was always building—first with LEGO, then in my dad's woodshop. But it was at nine years old, 
+                  when he enrolled me in a 3D design class using 3Ds Max, that my fascination with computers truly began. I became 
+                  captivated by the intersection of technology, design, and engineering—how digital tools could bring ideas to life. 
+                  That early spark continues to fuel my passion today. </p>
+              </details>
+              <img src="./images/wip.jpg" alt="Crucial Decision Image" class="decision-img">
+              <details class="decision-d">
+                <summary class="decison-s">My Crucial Decision. </summary>
+                <p class="decison-p">I started my college journey at the <abbr title="University of California, Riverside">UCR</abbr>, studying Mechanical Engineering. 
+                  I had always loved building and thought it was the perfect path for me. But as I explored different fields, 
+                  I realized that Computer Engineering was the bridge between my passion for development and my fascination 
+                  with computers. After taking my first coding class and later diving into computer architecture, I knew I had 
+                  found my place and made the crucial decision to switch majors. Two years in, I transferred to <abbr title="University of California, San Diego">UCSD</abbr>
+                  , where my ambitions only grew, driven by a desire to push the boundaries of technology and innovation. </p>
+              </details>
+              <img src="./images/wip.jpg" alt="Practice Image" class="practice-img">
+              <details class="practice-d">
+                <summary class="practice-s">What More to do than Practice. </summary>
+                <p class="practice-p">My journey as a computer engineer truly began in December 2023 with my first group coding project—a Chess game built in C++. 
+                  I quickly grew to love the planning and development process, seeing how ideas transformed into functional software. From there, I 
+                  expanded my skills into web development and, more recently, into building Machine Learning models. Lately, I've been diving into 
+                  hardware design, developing projects in embedded systems with the goal of one day exploring the world of computer chip design. With 
+                  every project, I refine my craft, always eager to push my technical abilities further. </p>
+              </details>
+              <img src="./images/wip.jpg" alt="Free Time Image" class="free-img">
+              <details class="free-d">
+                <summary class="free-s">Free Time</summary>
+                <p class="free-p">When I'm not working, you'll probably find me gaming with friends, shooting hoops on the basketball court, or 
+                  unwinding with my dad while watching sports. Whether it's the strategy of a game, the competition on the court, or just kicking back 
+                  with good company, I always find ways to stay engaged and recharge. </p>
+              </details>
+            </div>
+          </div>
+
+          <hr>
+          
+          <div class="education">
+            <h2 class="educ-header"><strong>Education</strong></h2>
+            <div class="timeline">
+              <div class="container left">
+                <div class="content">
+                  <h2 class="ucsd">University of California, San Diego</h2>
+                  <div class="tl">
+                    <p>La Jolla, CA</p>
+                    <p>2023 - present</p>
+                    <div class="ucsd-plus">+</div>
+                  </div>
+                </div>
+              </div>
+              <p class="hover-ucsd"><em><b>Relevant Coursework:</b> </em> Software Tools & Techniques Lab, Introduction to Analog Design, Engineering Probabilities & Statistics, Circuits and Systems,
+                Components and Circuit Lab, Design and Analysis of Algorithms, Digital Circuits, Linear System Fundamentals, Principles of Computer Operating Systems,
+                Advanced Data Structures, Machine Learning: Learning Algorithms, Introduction to Computer Visions, Advanced Digital Design Project, Linear Electronic Systems</p>
+              <div class="container right">
+                <div class="content">
+                  <h2 class="ucr">University of California, Riverside</h2>
+                  <div class="tl">
+                    <p>Riverside, CA</p>
+                    <p>2021 - 2023</p>
+                    <div class="ucr-plus">+</div>
+                  </div>
+                </div>
+              </div>
+              <p class="hover-ucr"><em><b>Relevant Coursework: </b> </em> Calculus I-III, Discrete Math, Discrete Structures, Introduction to Object-Oriented Design, Introduction to Data Structures and
+                Algorithms, Machine Organization and Assembly Language, Software Construction, Linear Methods, Differential Equations, Logic Design, Physics I-III </p>
+            </div>
+          </div>
+
+          <hr>
+
+
+          <!--Skills section will be changed for a better presentation (Don't like the table) -->
+          <h2 class="section-title">Skills & Experience</h2>
+          <section class="skills-section">        
+            <div class="skills-container">
+              <div class="skills-column">
+                <div class="skill">
+                  <span class="skill-name">C++</span>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 95%;"></div>
+                  </div>
+                  <span class="skill-exp">4 years</span>
+                </div>
+        
+                <div class="skill">
+                  <span class="skill-name">Java</span>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%;"></div>
+                  </div>
+                  <span class="skill-exp">3 years</span>
+                </div>
+        
+                <div class="skill">
+                  <span class="skill-name">Python</span>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 90%;"></div>
+                  </div>
+                  <span class="skill-exp">4 years</span>
+                </div>
+        
+                <div class="skill">
+                  <span class="skill-name">MATLAB</span>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%;"></div>
+                  </div>
+                  <span class="skill-exp">3 year</span>
+                </div>
+              </div>
+        
+              <div class="skills-column">
+                <div class="skill">
+                  <span class="skill-name">JavaScript</span>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 75%;"></div>
+                  </div>
+                  <span class="skill-exp">2 years</span>
+                </div>
+        
+                <div class="skill">
+                  <span class="skill-name">SQL</span>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 60%;"></div>
+                  </div>
+                  <span class="skill-exp">1 years</span>
+                </div>
+        
+                <div class="skill">
+                  <span class="skill-name">OpenCL</span>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 60%;"></div>
+                  </div>
+                  <span class="skill-exp">1 years</span>
+                </div>
+        
+                <div class="skill">
+                  <span class="skill-name">SystemVerilog</span>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 60%;"></div>
+                  </div>
+                  <span class="skill-exp">1 year</span>
+                </div>
+              </div>
+            </div>
+        
+          </section>
+        </section>
+    </main>
+    <br>
+
+    <!--Will pop up when getting near bottom of page (subtle on the side of page)-->
+    <dialog open>
+      <p>Thank You for visiting! Would you like to comment on your experience?</p>
+      <a href="survey.html">Survey</a> 
+    </dialog>
+
+    <footer class="foot">
+      <div>
+      <h2 class="contact-footer"> <strong>Contact</strong> </h2>
+        <nav class="socials">
+          <ul>
+            <li><a>Resume</a></li>
+            <li><a href="https://www.linkedin.com/in/john-hsu-56b121243/">LinkedIn</a></li>
+            <li><a href="https://github.com/johnh0425">GitHub</a></li>
+            <li><a>Email</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <h5 class="copyright">© 2025 John Hsu. All Rights Reserved.</h5>
+      </div>
+    </footer>
+  </body>
+</html>

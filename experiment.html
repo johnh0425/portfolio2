@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Experiment Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        aside { background: #f9f9f9; padding: 10px; margin: 10px 0; border-left: 4px solid #ccc; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML <span style="color:blue">Experiment</span> Page</h1>
+        <p>Exploring various HTML elements.</p>
+    </header>
+    
+    <section>
+        <h2>Data Input</h2>
+        <label for="tech">Choose a technology:</label>
+        <input list="technologies" id="tech" name="tech">
+        <datalist id="technologies">
+            <option value="HTML">
+            <option value="CSS">
+            <option value="JavaScript">
+            <option value="Python">
+        </datalist>
+    </section>
+    
+    <section>
+        <h2>Content Modification</h2>
+        <p>Here is an <ins>underlined text for emphasis</ins> and a <del>deleted text</del> for emphasis to ignore or not do.</p>
+    </section>
+    
+    <section>
+        <h2>Search and Address</h2>
+        <search>
+            <label for="site-search">Search for project:</label>
+            <input type="search" id="site-search" name="q">
+            <button>Search</button>
+        </search>
+        
+        <address>
+            Visit me at: 123 Web Street, Code City
+        </address>
+    </section>
+
+    <br>
+
+    <h1>Einstein's Famous Formula</h1>
+  <p>The famous formula for energy is expressed as:</p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <msup>
+        
+      <mi>E = mc</mi>
+      <mrow>
+        <mi>2</mi>
+      </mrow>
+    </msup>
+  </math>
+  <p>This formula states that energy is equal to mass times the speed of light squared.</p>
+
+  <br>
+
+  <hello-world>Hello World</hello-world>
+  <script>
+      class HelloWorld extends HTMLElement {
+          constructor() {
+              super();
+              console.log("Hello world!");
+          }
+      }
+      customElements.define('hello-world', HelloWorld);
+  </script>
+
+    customElements.define('hello-world', HelloWorld);
+
+    </script>
+
+    <h1>Link to external websites</h1>
+    <iframe src="https://ucsd.edu/" title="UCSD Page"></iframe>
+
+    <h4>This is a numbered list (steps to a project)</h4>
+    <ol>
+        <li>Apply HTML</li>
+        <li>Apply CSS</li>
+        <li>Apply JavaScript</li>
+    </ol>
+
+    <h2>Picture changes based on the dimensions of window</h2>
+    <picture>
+        <source media="(min-width:650px)" srcset="./images/test1.jpg">
+        <source media="(min-width:465px)" srcset="./images/test2.jpg">
+        <img src="./images/test3.jpg" alt="Flowers" style="width:auto;">
+    </picture>
+
+    <h2>Flower picture with caption. Good for project photo will a light description.</h2>
+    <figure>
+        <img src="./images/test3.jpg" alt="Trulli" style="width:100%">
+        <figcaption>Fig.1 - This is a flower photo.</figcaption>
+    </figure>
+
+    <h2>This is audio. Good for voice recordings or any project that involves audio.</h2>
+    <h3>Did not provide an audio but idea is still there.</h3>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <h2>This is a video. Good for showing project demos in the future. Will use this in future when demo of projects are done.</h2>
+    <h3>Did not provide an video but idea is still there.</h3>
+    <video width="320" height="240" controls>
+        <source src="movie.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+      </video>
+    
+    <section>
+        <h2>Keyboard Shortcut Example (Can be used in project pages)</h2>
+        <p>To refresh this page, press <kbd>Ctrl</kbd> + <kbd>R</kbd>.</p>
+    </section>
+    
+    <aside>
+        <h3>Side Note</h3>
+        <p>This is an aside section, often used for additional information. Can be used in project page.</p>
+    </aside>
+    
+    <section>
+        <h2>Table with Column Grouping (Can be used to describe group project roles)</h2>
+        <table>
+            <colgroup>
+                <col span="1" style="background-color: #f0f0f0;">
+                <col span="1" style="background-color: #e0e0e0;">
+            </colgroup>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>Developer</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Designer</td>
+            </tr>
+        </table>
+    </section>
+    
+    <section>
+        <h2>Media Example</h2>
+        <h3>mp4 file can be used in project page when there is a media file demo.</h3>
+        <video controls>
+            <source src="example.mp4" type="video/mp4">
+            <noscript>Sorry, your browser does not support videos.</noscript>
+        </video>
+    </section>
+
+    <h2>This is a svg and can be used for designs</h2>
+    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+
+    <h2>This is a canvas and can be used for designs</h2>
+    <canvas id="myCanvas" width="200" height="200" style="border:1px solid black;"></canvas>
+    
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(50, 50, 100, 100);
+    </script>
+    
+    <template>
+        <p>This content is inside a template and will not be rendered unless cloned via JavaScript.</p>
+    </template>
+</body>
+</html>
