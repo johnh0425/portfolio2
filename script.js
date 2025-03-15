@@ -50,3 +50,63 @@ document.addEventListener("DOMContentLoaded", function () {
     projectsTab.addEventListener("click", () => switchTab("projects"));
     aboutMeTab.addEventListener("click", () => switchTab("aboutme"));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const plusButtons = document.querySelectorAll(".ucsd-plus, .ucr-plus");
+    const detailsElements = document.querySelectorAll(".hover-ucsd, .hover-ucr");
+
+    // Click event to toggle course list visibility
+    plusButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const relevantCourses = button.classList.contains("ucsd-plus") 
+                ? document.querySelector(".hover-ucsd") 
+                : document.querySelector(".hover-ucr");
+
+            // Toggle visibility
+            const isVisible = relevantCourses.style.display === "flex";
+            relevantCourses.style.display = isVisible ? "none" : "flex";
+
+            // Change + to -
+            button.textContent = isVisible ? "+" : "-";
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".ucsd-plus, .ucr-plus").forEach(button => {
+            button.addEventListener("click", function () {
+                let target = this.classList.contains("ucsd-plus") ? 
+                             document.querySelector(".hover-ucsd") : 
+                             document.querySelector(".hover-ucr");
+    
+                target.classList.toggle("active");
+            });
+        });
+    });
+
+    // IntersectionObserver to auto-open courses when in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const isUCSD = entry.target.classList.contains("ucsd");
+            const relatedCourses = isUCSD 
+                ? document.querySelector(".hover-ucsd") 
+                : document.querySelector(".hover-ucr");
+    
+            const plusButton = isUCSD 
+                ? document.querySelector(".ucsd-plus") 
+                : document.querySelector(".ucr-plus");
+    
+            if (entry.isIntersecting) {
+                relatedCourses.style.display = "flex";
+                setTimeout(() => { // Small delay before applying opacity and transform
+                    relatedCourses.style.opacity = "1";
+                    relatedCourses.style.transform = "translateY(0)";
+                }, 50);
+    
+                plusButton.textContent = "-"; // Switch to -
+            } 
+        });
+    }, { threshold: 1 }); // Trigger when 100% of element is in view
+    
+
+    document.querySelectorAll(".ucsd, .ucr").forEach(element => observer.observe(element));
+});
