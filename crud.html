@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations</title>
+    <script>
+        function saveData() {
+            let key = document.getElementById("key").value;
+            let value = document.getElementById("value").value;
+            if (key && value) {
+                localStorage.setItem(key, value);
+                displayData();
+            }
+        }
+
+        function getData() {
+            let key = document.getElementById("key").value;
+            alert(localStorage.getItem(key));
+        }
+
+        function updateData() {
+            let key = document.getElementById("key").value;
+            let value = document.getElementById("value").value;
+            if (localStorage.getItem(key)) {
+                localStorage.setItem(key, value);
+                displayData();
+            } else {
+                alert("Key does not exist.");
+            }
+        }
+
+        function deleteData() {
+            let key = document.getElementById("key").value;
+            localStorage.removeItem(key);
+            displayData();
+        }
+
+        function displayData() {
+            let display = document.getElementById("dataDisplay");
+            display.innerHTML = "";
+            for (let i = 0; i < localStorage.length; i++) {
+                let key = localStorage.key(i);
+                let value = localStorage.getItem(key);
+                display.innerHTML += `<p><strong>${key}:</strong> ${value}</p>`;
+            }
+        }
+
+        window.onload = displayData;
+    </script>
+</head>
+<body>
+    <h2>CRUD Operations</h2>
+    <form onsubmit="return false;">
+        <label for="key">Key:</label>
+        <input type="text" id="key" required>
+        <label for="value">Value:</label>
+        <input type="text" id="value" required>
+        <button onclick="saveData()">Create</button>
+        <button onclick="getData()">Read</button>
+        <button onclick="updateData()">Update</button>
+        <button onclick="deleteData()">Delete</button>
+    </form>
+    <h3>Stored Data:</h3>
+    <div id="dataDisplay"></div>
+</body>
+</html>
