@@ -110,3 +110,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".ucsd, .ucr").forEach(element => observer.observe(element));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const detailsElements = document.querySelectorAll("details"); // Target all <details> elements
+  
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.setAttribute("open", "true");
+            }
+        });
+    }, { threshold: 1 }); // Trigger when 100% of the element is in view
+  
+    detailsElements.forEach(details => observer.observe(details));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const skills = document.querySelectorAll(".skill-fill");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillFill = entry.target;
+                skillFill.style.width = skillFill.getAttribute("data-width");
+            }
+        });
+    }, { threshold: 1 });
+
+    skills.forEach(skill => {
+        skill.setAttribute("data-width", skill.style.width); // Store original width
+        skill.style.width = "0%"; // Reset to 0 for animation
+        observer.observe(skill);
+    });
+});
