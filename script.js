@@ -143,3 +143,61 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(skill);
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const projectSection = document.querySelector(".projects");
+  
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            projectSection.style.opacity = "1";
+            projectSection.style.transform = "translateY(0)";
+          }
+        });
+      },
+      { threshold: 0.05 } // Trigger when 5% of the element is in view
+    );
+  
+    observer.observe(projectSection);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const arrow = document.getElementById("scrollArrow");
+    const projectsTab = document.querySelector(".proj");
+    const aboutMeTab = document.querySelector(".a-me");
+    const projectsSection = document.getElementById("projects");
+    const aboutMeSection = document.getElementById("aboutme");
+    let hasScrolled = false; // Flag to track if auto-scroll has happened
+
+    function getCurrentTarget() {
+        return projectsTab.classList.contains("active") ? projectsSection : aboutMeSection;
+    }
+
+    // Click event to scroll down
+    arrow.addEventListener("click", function () {
+        const targetSection = getCurrentTarget();
+        window.scrollTo({
+            top: targetSection.offsetTop,
+            behavior: "smooth"
+        });
+    });
+
+    // Scroll event to auto-scroll once
+    window.addEventListener("scroll", function () {
+        if (hasScrolled) return; // Prevent multiple triggers
+
+        const arrowPosition = arrow.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        // If arrow moves past 30% of the viewport, auto-scroll once
+        if (arrowPosition < windowHeight * 0.6) {
+            hasScrolled = true; // Set flag to prevent future auto-scrolls
+            const targetSection = getCurrentTarget();
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: "smooth"
+            });
+        }
+    });
+});
